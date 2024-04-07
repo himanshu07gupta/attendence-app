@@ -5,9 +5,7 @@ const { signinrouter } = require("./api/signin")
 
 const { teacher_schema } = require("../db")
 const { zod_structure } = require("../zod_validation")
-const dotenv = require("dotenv")
 
-dotenv.config()
 
 
 teacherrouter.use("/signup",signup_router)

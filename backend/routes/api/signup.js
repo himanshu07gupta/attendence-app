@@ -43,7 +43,7 @@ signup_router.post("/",async function(req,res){
     id
  },process.env.jwt_password)
 
-
+console.log(process.env.jwt_password)
  res.json({
     message : "data is added succesfully",
     email : teacher_data.email,

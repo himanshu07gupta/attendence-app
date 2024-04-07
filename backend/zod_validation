@@ -9,7 +9,7 @@ const zod_signupstructure = z.object({
 
 const zod_signinstructure = z.object({
     email : z.string().email(),
-    password : z.string()
+    password : z.string().min(6)
 })
 
 module.exports ={
