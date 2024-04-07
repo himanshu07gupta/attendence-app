@@ -1,0 +1,12 @@
+const z = require("zod")
+
+const zod_structure = z.object({
+    email : z.string().email(),
+    firstname : z.string(),
+    lastname : z.string(),
+    password : z.string().min(6)
+})
+
+module.exports ={
+    zod_structure
+}
