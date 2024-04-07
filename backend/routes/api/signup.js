@@ -1,5 +1,8 @@
 const express = require("express");
+const { zod_signupstructure } = require("../../zod_validation");
+const { teacher_schema } = require("../../db");
 const signup_router = express.Router();
+const jwt = require("jsonwebtoken")
 
 
 
@@ -7,7 +10,7 @@ signup_router.post("/",async function(req,res){
     const teacher_data = req.body
     
     // zod validation (for signup)
-    const validate = zod_structure.safeParse(teacher_data)
+    const validate = zod_signupstructure.safeParse(teacher_data)
     if(!validate.success){
         return res.status(400).json({
             message : "incorrect data format"
